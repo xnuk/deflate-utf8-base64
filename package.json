@@ -1,0 +1,26 @@
+{
+  "name": "base64-with-deflate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir compiled && WEBPACK=release webpack",
+    "start": "babel src --out-dir compiled --watch & webpack-dev-server --content-base dest/"
+  },
+  "author": "Xnuk Shuman",
+  "license": "Unlicense",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "html-webpack-plugin": "^2.8.1",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "jstransformer-stylus": "^1.0.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "base64-js": "^1.0.2",
+    "pako": "^0.2.8"
+  }
+}

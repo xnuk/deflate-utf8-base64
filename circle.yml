@@ -1,0 +1,29 @@
+general:
+  branches:
+    only:
+      - master
+    ignore:
+      - gh-pages
+machine:
+  node:
+    version: 5.1.0
+  pre:
+    - git config --global user.email "admin@xnu.kr"
+    - git config --global user.name "Xnuk Shuman"
+dependencies:
+  pre:
+    - npm install --save-dev
+test:
+  override:
+    - npm run build
+deployment:
+  upload:
+    branch: master
+    commands:
+      - git checkout --orphan gh-pages
+      - git reset
+      - mv dest/* .
+      - git add index.html
+      - git add main.js
+      - git commit -m 'update'
+      - git push -f origin gh-pages
