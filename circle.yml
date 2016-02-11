@@ -23,7 +23,6 @@ deployment:
       - git checkout --orphan gh-pages
       - git reset
       - mv dest/* .
-      - git add index.html
-      - git add main.js
+      - git add index.html main.js CNAME
       - git commit -m 'update'
       - git push -f origin gh-pages
