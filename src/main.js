@@ -1,29 +1,3 @@
-/*import { deflate, inflate } from 'zlib'
-
-var hash=location.hash.slice(1)
-const dectext=document.getElementById('decode')
-function decode(hash){
-	new Promise(res => {
-		if(hash!=='') inflate(new Buffer(hash, 'base64'), (err, buf) => {
-			if(err) res('')
-			else res(buf.toString('utf8'))
-		})
-		else res('')
-	}).then(v => dectext.value=v)
-}
-dectext.onchange=function(){
-	deflate(new Buffer(this.value, 'utf8'), (e, buf) => {
-		const h=buf.toString('base64')
-		hash=h
-		location.hash=h
-	})
-}
-window.onhashchange=()=>{
-	const h=location.hash.slice(1)
-	if(hash===h) return;
-	decode(h)
-}*/
-
 import { deflate, inflate } from 'pako'
 import { toByteArray, fromByteArray } from 'base64-js'
 
